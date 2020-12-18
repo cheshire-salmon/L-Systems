@@ -11,7 +11,7 @@
 
 См. примеры L-систем заданных в файлах [TREE.TXT](https://github.com/cheshire-salmon/L-Systems/blob/main/TREE.TXT) и [FLOWER.TXT](https://github.com/cheshire-salmon/L-Systems/blob/main/FLOWER.TXT)
 
-1-я строка в файле - строка сиволов L-системы.
+1-я строка в файле - строка символов L-системы.
 
 2-я строка в файле - первая часть правил.
 
