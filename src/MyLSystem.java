@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class MyLSystem extends JFrame {
-    private final static String inputFile = "TREE.TXT"; // Файл с правилами L-системы
+    private final static String inputFile = "FLOWER.TXT"; // Файл с правилами L-системы
     public final static int w  = 800;
     public final static int h  = 1000;
 
@@ -15,15 +15,17 @@ public class MyLSystem extends JFrame {
         String commands = "";
         String [] left;
         String [] right;
+        int repeats = 1;
         try {
             rd = new BufferedReader(new FileReader(new File(inputFile)));
             String initialCommands = rd.readLine();
             left = rd.readLine().split(",");
             right = rd.readLine().split(",");
+            repeats = Integer.valueOf(rd.readLine());
 
             // Применяем набор правил к строке
             commands = apply(initialCommands, left, right);
-            for (int i=0; i < 5; i++) {
+            for (int i=0; i < repeats; i++) {
                 commands = apply(commands, left, right);
             }
         } catch(
@@ -42,7 +44,7 @@ public class MyLSystem extends JFrame {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(w,h);
         frame.setLocationRelativeTo(null);
-        frame.add(new Tortoise(commands, 22.5, 1, 50, w / 2, h, -90));
+        frame.add(new Tortoise(commands, 22.5, 1, 50, w/2, h-50, -90));
         frame.setVisible(true);
         frame.setAlwaysOnTop(true);
     }

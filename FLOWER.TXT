@@ -1,3 +1,4 @@
-R
+RFRF
 R,F
-[R+F],[R-F]
+[R+F]F,[R-F]F
+8
